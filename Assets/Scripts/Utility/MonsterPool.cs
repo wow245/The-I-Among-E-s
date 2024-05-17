@@ -11,9 +11,8 @@ public class MonsterPool : ObjectPool
     {
         mapCollider = testMap.GetComponent<BoxCollider2D>();
         StartCoroutine(SpawnMonster(9));
-
-        Debug.Log(GameManager.Instance.ObjectPool.PoolDictionary.Count);
-        Debug.Log(GameManager.Instance.ObjectPool.pools.Count);
+        Vector2 pos = testMap.transform.position;
+        Debug.Log(pos);
     }
     
     // TODO :: 실제 스폰처리는 다른 곳에서 함

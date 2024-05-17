@@ -21,8 +21,4 @@ public class GameManager : MonoBehaviour
         ObjectPool = GetComponent<ObjectPool>();
     }
 
-    private void Update()
-    {
-        
-    }
 }
