@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager Instance;
+    public static GameManager Instance;
     [SerializeField] private string playerTag;
 
     public Transform Player { get; private set; }
+    public ObjectPool ObjectPool { get; private set; }
 
     private void Awake()
     {
@@ -17,5 +18,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        ObjectPool = GetComponent<ObjectPool>();
+    }
+
+    private void Update()
+    {
+        
     }
 }
