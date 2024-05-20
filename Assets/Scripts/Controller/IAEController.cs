@@ -8,10 +8,11 @@ public class IAEController : MonoBehaviour
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
     public event Action OnAttackEvent;
+    protected CharacterStatHandler stats { get; private set; }
 
     protected virtual void Awake()
     {
-        Debug.Log("IAEController ¸¸µé±â");
+        stats = GetComponent<CharacterStatHandler>();
     }
 
     public void CallMoveEvent(Vector2 direction)

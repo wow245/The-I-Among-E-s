@@ -7,14 +7,13 @@ public class IAEMovement : MonoBehaviour
     private IAEController controller;
     private Rigidbody2D movementRb;
     private Vector2 movementDir = Vector2.zero;
-    // TODO :: CharacterStatHandler 클래스 추가
-    // private CharacterStatHandler characterStatHandler;
+    private CharacterStatHandler characterStatHandler;
 
     private void Awake()
     {
         controller = GetComponent<IAEController>();
         movementRb = GetComponent<Rigidbody2D>();
-        //  characterStatHandler = GetComponent<CharacterStatHandler>(); 
+        characterStatHandler = GetComponent<CharacterStatHandler>(); 
     }
 
     private void Start()
@@ -34,8 +33,7 @@ public class IAEMovement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction *= 5; // TODO :: 설정한 스탯 값 적용
+        direction *= characterStatHandler.CurrentStat.speed;
         movementRb.velocity = direction;
     }
-
 }
