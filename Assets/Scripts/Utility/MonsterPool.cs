@@ -21,8 +21,8 @@ public class MonsterPool : ObjectPool
     {
         // TODO :: 반복 횟수 정하기
         //         정해진 정수 or 몬스터 n마리 처치 시 종료?
-        for(int i=0;i<count;i++)
-        {           
+        for (int i = 0; i < count; i++)
+        {
             GameObject monster = GameManager.Instance.ObjectPool.SpawnFromPool("Test");
             monster.transform.position = ReturnRandomPos();
 
@@ -34,7 +34,7 @@ public class MonsterPool : ObjectPool
     // 1. 맵 콜라이더를 가져와서 x, y 범위를 저장
     // 2. 중앙위치에 -(범위/2) ~ (범위/2) 값을 더해서 랜덤한 위치에 생성되도록
 
-    // TODO :: 3. 플레이어 시작 위치에 생성되면 안되니까 정중앙은 조금 비워둬야함
+    // TODO :: 3. 사방의 문에서 생성되도록 범위 지정하기
     public Vector2 ReturnRandomPos()
     {
         Vector2 pos = testMap.transform.position;

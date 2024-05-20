@@ -25,7 +25,7 @@ public class DestroyCharacter : MonoBehaviour
     }
 
     // TODO :: 몬스터가 화면 밖으로 벗어나게 할지 벽에 충돌하게 할지 정하기
-    // 화면 밖으로 벗어나면 소멸
+    // 몬스터도 벽에 충돌
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
